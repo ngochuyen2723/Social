@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1EDED"
+    tools:context=".Activities.ChatActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Receiver profile picture-->
+            <com.github.abdularis.civ.CircleImageView
+                android:id="@+id/profileIv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_default"
+                android:background="@color/colorPrimaryDark"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <!--        Receiver name-->
+                <TextView
+                    android:id="@+id/nameTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="His Name"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <!--Receiver status i.e. online of offline will implement later-->
+                <TextView
+                    android:id="@+id/userStatusTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="online"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <SearchView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/seachVw"/>
+            <!--Add icons to indicate blocked/unblocked-->
+            <ImageView
+                android:layout_marginEnd="5dp"
+                android:id="@+id/blockIv"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_unblocked_green"
+                android:layout_marginRight="5dp" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--RecyclerView-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/chatLayout"
+        android:layout_below="@+id/toolbar" />
+
+    <!--Send message edit text and button in layout-->
+    <LinearLayout
+        android:id="@+id/chatLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!--ImageButton: to send image-->
+        <ImageButton
+            android:id="@+id/attachBtn"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:src="@drawable/ic_attach" />
+        <ImageButton
+            android:id="@+id/recordBtn"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:src="@drawable/ic_record" />
+
+        <!--EditText: input message-->
+        <EditText
+            android:id="@+id/messageEt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:hint="Start typing"
+            android:inputType="textCapSentences|textMultiLine"
+            android:padding="15dp" />
+
+        <!--Button: send message-->
+        <ImageButton
+            android:id="@+id/sendBtn"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:src="@drawable/ic_send" />
+    </LinearLayout>
+
+
+</RelativeLayout>

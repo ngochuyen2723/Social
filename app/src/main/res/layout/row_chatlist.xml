@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:contentPadding="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--ImageView: User profile image-->
+        <com.github.abdularis.civ.CircleImageView
+            android:id="@+id/profileIv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_default_img" />
+
+        <!--ImageView: Online/Offline.Status-->
+        <ImageView
+            android:id="@+id/onlineStatusIv"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+        <!--TextView: Username-->
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="His Name"
+            android:layout_marginStart="4dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/profileIv"
+            android:layout_toRightOf="@+id/profileIv"
+            android:layout_marginLeft="3dp"/>
+        <!--TextView: Last message (be sender/receiver)-->
+        <TextView
+            android:id="@+id/lastMessageTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The last message"
+            android:layout_marginStart="4dp"
+            android:maxLines="2"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/profileIv"
+            android:layout_toRightOf="@+id/profileIv"
+            android:layout_below="@+id/nameTv"
+            android:layout_marginLeft="4dp"/>
+        <ImageView
+            android:id="@+id/infoIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameTv"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            app:srcCompat="@drawable/ic_info" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
